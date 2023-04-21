@@ -56,13 +56,13 @@ def train_model(device, model, criterion, optimizer, dataloaders, image_datasets
             epoch_loss = running_loss / image_datasets[phase]
             epoch_acc = running_corrects.double() / image_datasets[phase]
 
-            print('{} loss: {:.4f}, acc: {:.4f}'.format(phase,
-                                                        epoch_loss,
-                                                        epoch_acc))
+            print('{} loss: {:.4f}, acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
             h[phase]["loss"].append(epoch_loss)
             h[phase]["acc"].append(epoch_acc)
 
     print("Training time: {:.2f}s".format(time.time()-t0))
+    print('-' * 10)
+    print(' ')
     plt.style.use("ggplot")
     plt.figure()
     plt.plot(np.arange(1, num_epochs + 1), h["train"]["loss"], label="train_loss")
