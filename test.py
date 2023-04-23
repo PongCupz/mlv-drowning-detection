@@ -6,7 +6,7 @@ from utility.shufflenet import ShuffleNet
 import argparse
 
 ap = argparse.ArgumentParser()
-ap.add_argument("-d", "--dataset", required=True,help=".path to output dataset")
+ap.add_argument("-d", "--dataset", required=True,help="path to input test dataset")
 ap.add_argument("-m", "--model", required=True,help="path to output model")
 ap.add_argument("-t", "--type", required=True,help="model type")
 args = vars(ap.parse_args())
